@@ -9,7 +9,7 @@ eureka:
 logging:
   file: ./log/apiGatewayService.log
 server:
-  port: 8766
+  port: 8765
 spring:
   cloud:
     discovery:
