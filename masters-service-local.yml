@@ -1,0 +1,54 @@
+
+server:
+  port: 9008
+
+cron:
+  expression: "0 0 00 * * *"
+
+logging:
+  file: ./log/mastersService.log
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    ca.uhn.fhir.parser.LenientErrorHandler : ERROR
+    
+paging:
+  default-size: 30
+
+upload:
+  path: /tmp/tomcat.3134687025173759747.7071/work/Tomcat/localhost/ROOT
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.120.34:5432/Master
+    username: postgres
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Eureka integration config
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka
+
+fims:
+  url: https://apifimsdev.uum.edu.my/
+
+user:
+  url: http://localhost:8765/id-service/
+
+general_maintenence:
+  #url: http://localhost:7077/
+  url: http://localhost:8765/GeneralMaintenance/
