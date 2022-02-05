@@ -6,7 +6,7 @@ cron:
   expression: "0 0 00 * * *"
 
 logging:
-  file: ./log/opdService.log
+  file: C:/elk/spring-boot-elk.log
   level:
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
     ca.uhn.fhir.parser.LenientErrorHandler : ERROR
